@@ -40,4 +40,12 @@ class Browser
     @driver.switch_to.window(window)
   end
 
+  def close_window
+    @driver.driver.close
+  end
+
+  def quit_browser
+    @driver.driver.quit
+  end
+
 end
