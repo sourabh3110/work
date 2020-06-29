@@ -7,4 +7,3 @@ gems:
 	gem install faker
 	gem install bundler
 	bundle install
-	bundle update
