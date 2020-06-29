@@ -1,1 +1,0 @@
-This is the text for the second task which requires me to create a new branch and create a new file and add some text to the file
