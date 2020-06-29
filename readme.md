@@ -17,4 +17,4 @@
   `brew cask install chromedriver`
 
   ## Run Feature:
-   Go to work folder and run command: `cucumber`
+   Go inside cucumber folder and run command: `cucumber`
