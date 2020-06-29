@@ -1,14 +1,9 @@
-Given ('I open browser') do
-  @browser = Browser.new
-  @browser.open_chrome_browser()
-end
-
-When ('I launch facebook URL') do
+Given ('I launch facebook URL') do
   @browser.navigate_to(FB_URL)
 end
 
 Then ('I see sign-up page') do
-  @facebook = Facebook.new
+  @facebook = Facebook.new(@browser.driver)
   expect(@facebook.is_sign_up_button_displayed).to eq(true)
 end
 

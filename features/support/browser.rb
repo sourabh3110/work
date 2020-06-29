@@ -1,5 +1,6 @@
 class Browser
-  attr_reader :browser
+  attr_reader :driver
+
   def initialize(browser)
     @driver = start_browser(browser)
     maximize_window
@@ -12,8 +13,9 @@ class Browser
         args = ['--disable-notifications','--disable-extensions']
         args.concat(['--headless']) unless ENV['RUN_BROWSER']
         options = Selenium::WebDriver::Chrome::Options.new(args: args)
-        Selenium::WebDriver.for(:chrome, options: options)
+        @driver = Selenium::WebDriver.for(:chrome, options: options)
       end
+      @driver
   end
 
   def delete_cookies
