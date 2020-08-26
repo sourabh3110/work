@@ -34,7 +34,7 @@ class Browser
     @driver.navigate.refresh
   end
 
-  def windows?
+  def windows_count?
     @driver.window_handles
   end
 
@@ -48,6 +48,14 @@ class Browser
 
   def quit_browser
     @driver.driver.quit
+  end
+
+  def scroll(x, y)
+    @driver.execute_script("window.scrollBy(#{x},#{y})")
+  end
+
+  def scroll_to_element(element)
+    @driver.execute_script("arguments[0].scrollIntoView(true)", element)
   end
 
 end

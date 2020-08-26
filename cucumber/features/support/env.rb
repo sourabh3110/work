@@ -6,5 +6,5 @@ Before do
 end
 
 After do
-    
+    @browser.quit_browser
 end
