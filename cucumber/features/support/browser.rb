@@ -13,49 +13,49 @@ class Browser
         args = ['--disable-notifications','--disable-extensions']
         args.concat(['--headless']) unless !ENV['RUN_BROWSER']
         options = Selenium::WebDriver::Chrome::Options.new(args: args)
-        @driver = Selenium::WebDriver.for(:chrome, options: options)
+        driver = Selenium::WebDriver.for(:chrome, options: options)
       end
-      @driver
+      driver
   end
 
   def delete_cookies
-    @driver.manage.delete_all_cookies
+    driver.manage.delete_all_cookies
   end
 
   def maximize_window
-    @driver.manage().window().maximize()
+    driver.manage().window().maximize()
   end
 
   def navigate_to(url)
-    @driver.navigate.to(url)
+    driver.navigate.to(url)
   end
 
   def refresh
-    @driver.navigate.refresh
+    driver.navigate.refresh
   end
 
   def windows_count?
-    @driver.window_handles
+    driver.window_handles
   end
 
   def switch_to_window(window)
-    @driver.switch_to.window(window)
+    driver.switch_to.window(window)
   end
 
   def close_window
-    @driver.driver.close
+    driver.driver.close
   end
 
   def quit_browser
-    @driver.driver.quit
+    driver.driver.quit
   end
 
   def scroll(x, y)
-    @driver.execute_script("window.scrollBy(#{x},#{y})")
+    driver.script("window.scrollBy(#{x},#{y})")
   end
 
   def scroll_to_element(element)
-    @driver.execute_script("arguments[0].scrollIntoView(true)", element)
+    driver.script("arguments[0].scrollIntoView(true)", element)
   end
 
 end
