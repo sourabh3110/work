@@ -1,14 +1,15 @@
 class Facebook
-  attr_reader :driver
+  include Action
+  attr_reader :driver, :wait
 
-  def initialize(driver)
+  def initialize(driver, wait)
     @driver = driver
-    @utility = Utility.new(driver)
+    @wait = wait
   end
 
   def is_sign_up_button_displayed
-    @utility.wait_till_element_display(css: FACEBOOK['sign_up_button'])
-    @driver.find_element(css: FACEBOOK['sign_up_button']).displayed?
+    wait_for_element(css: FACEBOOK['sign_up_button'])
+    displayed?(css: FACEBOOK['sign_up_button'])
   end
 
 end

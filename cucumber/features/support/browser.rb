@@ -13,9 +13,8 @@ class Browser
         args = ['--disable-notifications','--disable-extensions']
         args.concat(['--headless']) unless !ENV['RUN_BROWSER']
         options = Selenium::WebDriver::Chrome::Options.new(args: args)
-        driver = Selenium::WebDriver.for(:chrome, options: options)
+        Selenium::WebDriver.for(:chrome, options: options)
       end
-      driver
   end
 
   def delete_cookies

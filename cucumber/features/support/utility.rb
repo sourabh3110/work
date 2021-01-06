@@ -6,7 +6,7 @@ class Utility
       @wait = Selenium::WebDriver::Wait.new(timeout: 15)
     end
 
-    def wait_till_element_display(element)
+    def wait(element)
         wait.until{driver.find_element(element).displayed?}
     end
 

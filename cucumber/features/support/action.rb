@@ -1,29 +1,21 @@
-class Action
-    attr_reader :driver
+module Action
 
-    def click
-        driver.first(id: ).click
-    end
+  def wait_for_element(element)
+    wait.until{driver.find_element(element).displayed?}
+  end
 
-    def click(address)
-        driver.all(id: )[address].click
-    end
+  def find(element)
+    wait_for_element(element)
+    driver.find_element(element)
+  end
 
-    def enter(data)
+  def find_all(element)
+    wait_for_element(element)
+    driver.find_elements(element)
+  end
 
-    end
-
-    def read(data)
-    end
-
-    def select(arg)
-    end
-
-    def update(data)
-    end
-
-    def close(arg)
-    end
-    
+  def displayed?(element)
+    driver.find_element(element).displayed?
+  end
 
 end

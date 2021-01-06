@@ -3,6 +3,7 @@ require 'byebug'
 
 Before do
     @browser = Browser.new('chrome')
+    @wait = Selenium::WebDriver::Wait.new(timeout: 15)
 end
 
 After do
