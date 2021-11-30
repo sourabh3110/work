@@ -7,8 +7,11 @@
    Run command: `rvm list`
    Use command "rvm use `version`" to use required ruby
 
+  ## Setup cucumber
+    cucumber --init
+    
   ## Set up Gems:
-   Go to cucumber_framework folder and rub command : make gems
+   Go to cucumber folder and rub command : make gems
 
   ## Google Chrome:
    Chrome should be updated
