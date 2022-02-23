@@ -13,7 +13,7 @@ class Browser
         options.add_argument('--disable-notifications')
         options.add_argument('--disable-extensions')
         options.add_argument('--headless')unless !ENV['RUN_BROWSER']
-        Selenium::WebDriver::Chrome.driver_path= File.absolute_path("./chromedriver")
+        Selenium::WebDriver::Chrome::Service.driver_path= File.absolute_path("./chromedriver")
         Selenium::WebDriver.for(:chrome, options: options)
       end
   end
@@ -43,11 +43,11 @@ class Browser
   end
 
   def close_window
-    driver.driver.close
+    driver.close
   end
 
   def quit_browser
-    driver.driver.quit
+    driver.quit
   end
 
   def scroll(x, y)
