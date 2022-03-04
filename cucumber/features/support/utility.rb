@@ -6,7 +6,7 @@ class Utility
     end
 
     def wait(element)
-        $wait.until{driver.find_element(element).displayed?}
+        $wait.until{$driver.find_element(element).displayed?}
     end
 
     def scroll(horizontal:, vertical:)
@@ -15,7 +15,7 @@ class Utility
 
     def is_visible?(element)
         begin
-            $wait.until{@driver.find_element(element).displayed?}
+            $wait.until{$driver.find_element(element).displayed?}
         rescue => exception
             puts exception.message
         end

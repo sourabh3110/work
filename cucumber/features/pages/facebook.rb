@@ -1,9 +1,7 @@
 class Facebook
   include Action
-  attr_reader :driver
 
-  def initialize(driver)
-    @driver = driver
+  def initialize()
   end
 
   def is_sign_up_button_displayed
