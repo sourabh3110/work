@@ -7,3 +7,4 @@ Feature: Facebook Sign-up
     Given I launch facebook URL
     When I enter correct email and password and login
     Then I should see home page
+ƒ
