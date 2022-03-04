@@ -1,13 +1,12 @@
 class Utility
-    attr_reader :driver, :wait
+    attr_reader :driver
 
     def initialize(driver)
       @driver = driver
-      @wait = Selenium::WebDriver::Wait.new(timeout: 15)
     end
 
     def wait(element)
-        wait.until{driver.find_element(element).displayed?}
+        $wait.until{driver.find_element(element).displayed?}
     end
 
     def scroll(horizontal:, vertical:)
@@ -16,7 +15,7 @@ class Utility
 
     def is_visible?(element)
         begin
-            wait.until{@driver.find_element(element).displayed?}
+            $wait.until{@driver.find_element(element).displayed?}
         rescue => exception
             puts exception.message
         end
