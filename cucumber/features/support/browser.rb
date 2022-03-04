@@ -8,13 +8,13 @@ class Browser
 
   def start_browser(name)
     case name
-      when 'chrome'
-        options = Selenium::WebDriver::Chrome::Options.new()
-        options.add_argument('--disable-notifications')
-        options.add_argument('--disable-extensions')
-        options.add_argument('--headless')unless !ENV['RUN_BROWSER']
-        Selenium::WebDriver::Chrome::Service.driver_path= File.absolute_path("./chromedriver")
-        Selenium::WebDriver.for(:chrome, options: options)
+    when 'chrome'
+      options = Selenium::WebDriver::Chrome::Options.new
+      options.add_argument('--disable-notifications')
+      options.add_argument('--disable-extensions')
+      options.add_argument('--headless') if ENV['RUN_BROWSER']
+      Selenium::WebDriver::Chrome::Service.driver_path = File.absolute_path('./chromedriver')
+      Selenium::WebDriver.for(:chrome, options: options)
       end
   end
 
@@ -23,7 +23,7 @@ class Browser
   end
 
   def maximize_window
-    driver.manage().window().maximize()
+    driver.manage.window.maximize
   end
 
   def navigate_to(url)
@@ -55,7 +55,6 @@ class Browser
   end
 
   def scroll_to_element(element)
-    driver.script("arguments[0].scrollIntoView(true)", element)
+    driver.script('arguments[0].scrollIntoView(true)', element)
   end
-
 end
