@@ -1,8 +1,4 @@
-When(/^I provide vip(\d+)@yopmail\.com$/) do |email|
-  browser.text_field(:name, "Email").set("email@yopmail.com")
-end
-
-When ('I enter {email} and {password} and login') do |email,password|
+When('I enter {string} and {string} and login') do |string, string2|
   @facebook = Facebook.new()
-  @facebook.login(email, password)
+  @facebook.login(string, string2)
 end

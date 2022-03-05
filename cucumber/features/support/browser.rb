@@ -34,12 +34,20 @@ class Browser
     driver.navigate.refresh
   end
 
+  def new_window
+    driver.execute_script('window.open()')
+  end
+
   def windows_count?
     driver.window_handles
   end
 
-  def switch_to_window(window)
-    driver.switch_to.window(window)
+  def switch_to_window(id)
+    driver.switch_to.window(id)
+  end
+
+  def switch_to_frame(id)
+    driver.switch_to.frame(id)
   end
 
   def close_window
