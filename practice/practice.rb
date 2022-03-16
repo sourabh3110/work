@@ -1,14 +1,6 @@
-class Practice
-  attr_reader :no_of_customers
-    @@no_of_customers = 0
-
-    def total_no_of_customers
-       @@no_of_customers += 1
-       puts "Total number of customers: #@@no_of_customers"
-    end
-
-    @no_of_customers = @@no_of_customers
-
+def m1(str)
+    # str.index[i].match =~ /[0-9]/
+    " 201 5" =~ /[0-9]/
 end
 
-#  Practice.new.total_no_of_customers
+puts m1("12345tfhjujgfe45678ik,,,,,,,jhgvbnhjytre2345")

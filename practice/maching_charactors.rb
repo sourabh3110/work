@@ -1,20 +1,17 @@
 def matchingCharacters(argument)
-  string = argument.split('')
   matchingCharacters = {}
-  for i in string
-    matchingCharacters[i] = 0
-  end
-  for i in string
-    matchingCharacters[i] = matchingCharacters[i] + 1 if matchingCharacters.key?(i)
-  end
+  argument.split('').each{|ch| matchingCharacters[ch] = 0}
+  argument.split('').each{|ch| matchingCharacters[ch] += 1}
   matchingCharacters
 end
 
 def nonMatchingCharactors(argument)
-  string = argument.split('')
   matchingCharacters = matchingCharacters(argument)
+  string = argument.split('')
   for i in string
-    matchingCharacters.delete(i) if mc[i] != 1
+    matchingCharacters.delete(i) if matchingCharacters[i] != 1
   end
-  matchingCharacters
+  matchingCharacters.first.first
 end
+
+p matchingCharacters("876556756756456545678987898987876765456787654678")
