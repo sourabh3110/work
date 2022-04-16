@@ -1,4 +1,4 @@
-default: --profile html_report --publish-quiet
+default: --format pretty --profile html_report --publish-quiet -f rerun --out rerun.txt
 json: --profile json_report
 json_report: --format progress --format json --out reports/report.json
 html_report: --format progress --format html --out reports/report.html
