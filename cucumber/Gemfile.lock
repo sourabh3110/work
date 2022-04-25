@@ -49,6 +49,7 @@ GEM
     mime-types-data (3.2022.0105)
     multi_test (0.1.2)
     multi_xml (0.6.0)
+    require_all (3.0.0)
     rexml (3.2.5)
     rspec-expectations (3.11.0)
       diff-lcs (>= 1.2.0, < 2.0)
@@ -70,6 +71,7 @@ DEPENDENCIES
   cucumber (~> 7.1)
   faker
   httparty
+  require_all
   rspec-expectations
   selenium-webdriver
 

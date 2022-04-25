@@ -5,3 +5,4 @@ mkdir reports
 
 -f rerun --out rerun.txt
 @rerun.txt
+rm -rf screenshots

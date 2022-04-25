@@ -8,3 +8,4 @@ gem 'httparty' #For API Automation
 gem 'byebug' #Debugging Tool
 gem 'rspec-expectations' #Assertions
 gem 'faker' #Temp Date Genarator
+gem 'require_all' # To require all the files under a folder or a given Path
