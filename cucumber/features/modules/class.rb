@@ -1,6 +1,5 @@
-$LOAD_PATH << '.'
-require "FIRSt"
-require "SECOND"
+require_relative "first"
+require_relative "second"
 
 class Collect
   include First

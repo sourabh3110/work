@@ -1,4 +1,4 @@
-Given('Setting Up the environment')do
+Given ('Setting Up the environment')do
   puts "Setting Up the environment"
 end
 
@@ -15,6 +15,6 @@ Then ('I should see home page') do
   expect(@facebook.home_page_displayed?).to eq(true)
 end
 
-When(/^* click on forgot password$/) do
+When  (/^* click on forgot password$/) do
   $driver.find_element(:link, 'Forgotten password?').click()
 end
