@@ -19,24 +19,34 @@
     split
   end
   
-  def is_vowel?(str2)
+  def is_vowel?(str)
+    value = false
     for i in ['a','e','i','o','u']
-      if i == str2
-        return true
-      else
-        return false
+      if i == str
+        value = true
       end
     end
+    value
   end
 
-  def is_consonant?(str2)
-    for i in ['a','e','i','o','u']
-      if i != str2 && str2.match?(/[[:alpha:]]/)
-        return true
-      else
-        return false
+  # def is_consonant?(str)
+  #   value = false
+  #   for i in ['b','c','d','f','g','h','j','k','l','m','n','p','q','r','s','t','v','w,','x','y','z']
+  #     if i == str
+  #       value = true
+  #     end
+  #   end
+  #   value
+  # end
+
+  def is_consonant?(str)
+    value = false
+    if !is_vowel?(str)
+      if str.match?(/[a-zA-Z]/)
+        value = true
       end
     end
+    value
   end
   
   def vow_con(str)
@@ -51,7 +61,7 @@
         cons += 1
       end
     end
-    return "vowels are #{vow}", "consonants are #{cons}"
+    return "vowels are #{vow}","consonants are #{cons}"
   end
   
-  p vow_con("bbbbb..........aaa")
+  p vow_con("aaaoi.....qased.")

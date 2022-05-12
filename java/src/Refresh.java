@@ -6,5 +6,6 @@ public class Refresh {
 
     public static void main( String args[]){
         System.out.println("Class_running");
+        M1()
     }
 }
