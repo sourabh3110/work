@@ -1,5 +1,5 @@
 def arrayTostring(argument)
-  reverse = reverse(argument)
-  reverse.to_s
-  reverse.join('')
+  argument.join('')
 end
+
+puts arrayTostring(['s','o','r'])

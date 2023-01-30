@@ -6,10 +6,8 @@ BEGIN {
 END {
 }
 
-class ArrayPractice
-
-  def create_array
-    []
-  end
-
+def create_array
+  []
 end
+
+puts create_array()

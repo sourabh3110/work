@@ -22,6 +22,6 @@ class Two < One
   end
 end
 
-ins = One.new()
+ins = Two.new()
 ins.m1(1,2,3)
 

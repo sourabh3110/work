@@ -2,7 +2,7 @@ def create_array
   arr = []
   for i in 0...100
     arr[i] = i+1
-    arr.delete(10)
+    arr.delete(22)
   end
   arr.compact
 end
